@@ -5,6 +5,7 @@ include ('config.php'); //connects to database
 //get the inputs from user - email and password
 $email = "";
 $password = "";
+$errors = [];
 
 if(isset($_POST['submit'])){
     $email = strval(mysqli_real_escape_string($conn, $_POST['email']));
@@ -33,7 +34,7 @@ $password_hash = substr($password_hash, 0, 60);
 if($login_check['email'] == $email && password_verify($password, $password_hash)){
    header('Location: index.html');
 }elseif(empty($login_check)){
-    echo "no user found";
+    $errors['noUser'] = "No User Found.";
 }else{
     echo "Username/Password is wrong";
 }
@@ -64,6 +65,9 @@ if($login_check['email'] == $email && password_verify($password, $password_hash)
                     <div class="auth-text-top mb-4">
                         <h1>Welcome Back</h1>
                         <small>Please login to your account or <a href="register.php">Create Account</a></small>
+                    </div>
+                    <div style="font-size:14px; color:red;">
+                    <?php if(!empty($errors)){ echo $errors['noUser'];} ?>
                     </div>
                     <form action="" method="POST">
                         <div class="form-group">

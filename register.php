@@ -3,6 +3,7 @@
 $email = "";
 $username = "";
 $password = "";
+$errors = ['noCheck' => "", 'userRegistered' => ""];
 
 include('config.php');//connect to database
 
@@ -17,10 +18,12 @@ $sql = "SELECT email FROM users WHERE email = '$email'";
 $result = mysqli_query($conn, $sql) or die("MySQL error: " . mysqli_error($conn));
 $email_registered = mysqli_fetch_assoc($result);
 
-if(empty($email_registered)){
+if(empty($email_registered) && isset($_POST['checkbox'])){
 include ('addToDatabase.php');//adds to database
+}elseif(!isset($_POST['checkbox'])){
+    $errors['noCheck'] = 'Please agree to our terms and conditions';
 }else{
-    echo "user already registered under email";
+    $errors['userRegistered'] = 'User already registered';
 }
 }
 ?>
@@ -50,6 +53,9 @@ include ('addToDatabase.php');//adds to database
                         <h1>Create Account</h1>
                         <small>Already have an account? <a href="signin.php">Login to Account</a></small>
                     </div>
+                    <div style="font-size:14px; color:red;">
+                    <p> <?php if(!empty($errors)){ echo $errors['noCheck'] . $errors['userRegistered'];}?>
+                    </div> 
                     <form action="register.php" method="POST">
                         <div class="form-group">
                             <label for="username">Username</label>
@@ -77,7 +83,7 @@ include ('addToDatabase.php');//adds to database
                             </div>
                         </div>
                         <div class="d-flex form-check">
-                            <input type="checkbox" class="filter" id="remember" checked>
+                            <input type="checkbox" name="checkbox" class="filter" id="remember" checked>
                             <label for="remember">I Accept <a href="#">Terms and Conditions</a></label>
                         </div>
                         <button type="submit" name="submit" class="btn btn-primary btn-block btn-c mt-4 mb-4">Create an account</button>
