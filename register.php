@@ -20,6 +20,9 @@ $email_registered = mysqli_fetch_assoc($result);
 
 if(empty($email_registered) && isset($_POST['checkbox'])){
 include ('addToDatabase.php');//adds to database
+$_SESSION['isLoggedIn'] = 'true';
+$_SESSION['username'] = "$username";
+header('Location: index.php');
 }elseif(!isset($_POST['checkbox'])){
     $errors['noCheck'] = 'Please agree to our terms and conditions';
 }else{

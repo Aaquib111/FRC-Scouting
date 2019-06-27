@@ -32,7 +32,9 @@ $password_hash = substr($password_hash, 0, 60);
 //confirm/deny entry based on if the inputs were successful (AKA login was succesful so they get redirected)
 
 if($login_check['email'] == $email && password_verify($password, $password_hash)){
-   header('Location: index.html');
+    $_SESSION['isLoggedIn'] = 'true';
+    $_SESSION['username'] = "$username";
+    header('Location: index.php');
 }elseif(empty($login_check)){
     $errors['noUser'] = "No User Found.";
 }else{
