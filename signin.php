@@ -8,7 +8,7 @@ $password = "";
 
 if(isset($_POST['submit'])){
     $email = strval(mysqli_real_escape_string($conn, $_POST['email']));
-    $password = $_POST['password'];
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
 
 //check inputs against server values
@@ -32,6 +32,8 @@ $password_hash = substr($password_hash, 0, 60);
 
 if($login_check['email'] == $email && password_verify($password, $password_hash)){
    header('Location: index.html');
+}elseif(empty($login_check)){
+    echo "no user found";
 }else{
     echo "Username/Password is wrong";
 }

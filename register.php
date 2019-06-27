@@ -11,7 +11,17 @@ $email = mysqli_real_escape_string($conn, $_POST['email']); //sets the value of 
 $username = mysqli_real_escape_string($conn, $_POST['username']);
 $password = mysqli_real_escape_string($conn, $_POST['password']);
 $password_hash = password_hash($password, PASSWORD_DEFAULT);
+
+//check if they are already registered
+$sql = "SELECT email FROM users WHERE email = '$email'";
+$result = mysqli_query($conn, $sql) or die("MySQL error: " . mysqli_error($conn));
+$email_registered = mysqli_fetch_assoc($result);
+
+if(empty($email_registered)){
 include ('addToDatabase.php');//adds to database
+}else{
+    echo "user already registered under email";
+}
 }
 ?>
 
