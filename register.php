@@ -66,9 +66,6 @@ include ('addToDatabase.php');//adds to database
                                        placeholder="Enter Your Password" required>
                             </div>
                         </div>
-                        <div class="d-flex form-check">
-                            <label for="remember">I Accept <a href="#">Terms and Conditions</a></label>
-                        </div>
                         <button type="submit" name="submit" class="btn btn-primary btn-block btn-c mt-4 mb-4">Create an account</button>
                     </form>
                 </div>
@@ -76,7 +73,7 @@ include ('addToDatabase.php');//adds to database
         </div>
         <div class="col-lg-8 auth-right d-lg-flex d-none bg-gradient" id="particles">
             <div class="logo">
-                <img src="assets/img/Droid-Robot-512.png" width="100" alt="logo">
+            <img src="Untitled-1-white.png" width="300" alt="logo">
             </div>
             <div class="heading">
                 <h3>Welcome to FRCS</h3>
