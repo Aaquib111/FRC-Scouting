@@ -80,7 +80,6 @@ if($login_check['email'] == $email && password_verify($password, $password_hash)
                             </div>
                         </div>
                         <div class="d-flex form-check">
-                            <label for="remember">Remember me</label>
                             <a href="reset_password.php" class="ml-auto font-s">Forgot Password?</a>
                         </div>
                         <button type="submit" name="submit" class="btn btn-primary btn-block btn-c mt-4 mb-4">Login</button>

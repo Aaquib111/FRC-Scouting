@@ -3,6 +3,7 @@
 $email = "";
 $username = "";
 $password = "";
+$errors = ['noCheck' => "", 'userRegistered' => ""];
 
 include('config.php');//connect to database
 
@@ -11,7 +12,22 @@ $email = mysqli_real_escape_string($conn, $_POST['email']); //sets the value of 
 $username = mysqli_real_escape_string($conn, $_POST['username']);
 $password = mysqli_real_escape_string($conn, $_POST['password']);
 $password_hash = password_hash($password, PASSWORD_DEFAULT);
+
+//check if they are already registered
+$sql = "SELECT email FROM users WHERE email = '$email'";
+$result = mysqli_query($conn, $sql) or die("MySQL error: " . mysqli_error($conn));
+$email_registered = mysqli_fetch_assoc($result);
+
+if(empty($email_registered) && isset($_POST['checkbox'])){
 include ('addToDatabase.php');//adds to database
+$_SESSION['isLoggedIn'] = 'true';
+$_SESSION['username'] = "$username";
+header('Location: index.php');
+}elseif(!isset($_POST['checkbox'])){
+    $errors['noCheck'] = 'Please agree to our terms and conditions';
+}else{
+    $errors['userRegistered'] = 'User already registered';
+}
 }
 ?>
 
