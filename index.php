@@ -7,17 +7,16 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/3.3.92/css/materialdesignicons.min.css">
-    <!--<link rel="stylesheet" href="assets/css/bootstrap.min.css"> 
-    <link rel="stylesheet" href="assets/css/galaxy-style.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
-    <title>FRCS</title>
+    
+
+    <title>FRCS: The New Way To Scout</title>
 </head>
 <body>
 
     <style>
         body {
           margin: 0;
+          
         }
       
         .topnav {
@@ -26,17 +25,7 @@ session_start();
           
         }
         
-        @keyframes nav{
 
-          0%{
-            color: transparent;
-          }
-
-          100%{
-            color: white;
-          }
-
-        }
 
         .topnav a {
           margin-left: 10px;
@@ -65,10 +54,10 @@ session_start();
         <div class="topnav">
           <a class="active" href="index.html">Home</a>
           <a href="scouting.html">Scouting</a>
-          <a href="rankings.html">Rankings</a>
+          <a href="signin.php">Rankings</a>
           <a href="data.html">Download Data</a>
           <a href="matchanalysis.html">Match Analysis<sub>BETA</sub></a>
-          <a href="Feedback.3.html">Feeback</a>
+          <a href="Feedback.html">Feeback</a>
         </div>
         
         <div style="padding-left:16px">
@@ -90,7 +79,7 @@ session_start();
             font-size: 150px;
             margin-top: 100px;
             position: relative;
-            animation: text 2s 1;
+            
 
         }
       #sub{
@@ -99,7 +88,7 @@ session_start();
             margin-top: -120px;
             font-size: 21.5px;
             font-family: sans-serif;
-            animation: text2 3s 1;
+            
           
                   }
   
@@ -158,26 +147,71 @@ session_start();
 
     </style>
 
-<center><video width="700" controls class="video">
-    <source src="video.MP4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video></center>
 
 
 
 
 <style>
 
-  #sign-in{
-    color: #ddd;
-    
-    
+* {
+  box-sizing: inherit;
+  transition-property: all;
+  transition-duration: .6s;
+  transition-timing-function: ease;
+}
+.btn {
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 45px;
+  margin: 0 0 2em;
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+  .btn-2 {
+  letter-spacing: 0;
+}
 
-  }
+.btn-2:hover,
+.btn-2:active {
+  letter-spacing: 5px;
+}
 
+.btn-2:after,
+.btn-2:before {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.btn-2:hover:after,
+.btn-2:hover:before {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-color: #fff;
+  transition: width 350ms ease-in-out;
+  width: 5%;
+}
+
+.btn-2:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 5%;
+}
 </style>
-
-<a id="sign-in" href="signin.php">Sign In</a>
+</br>
+<center><a href="signin.php" class="btn btn-2">Sign In</a></center>
 
 
 </body>

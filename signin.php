@@ -5,7 +5,7 @@ include ('config.php'); //connects to database
 //get the inputs from user - email and password
 $email = "";
 $password = "";
-$errors = [];
+$errors = ['noUser' => "", 'loginIncorrect' => ""];
 
 if(isset($_POST['submit'])){
     $email = strval(mysqli_real_escape_string($conn, $_POST['email']));
@@ -38,7 +38,7 @@ if($login_check['email'] == $email && password_verify($password, $password_hash)
 }elseif(empty($login_check)){
     $errors['noUser'] = "No User Found.";
 }else{
-    echo "Username/Password is wrong";
+    $errors['loginIncorrect'] = "Username/Password is wrong";
 }
 }
 ?>
@@ -69,7 +69,7 @@ if($login_check['email'] == $email && password_verify($password, $password_hash)
                         <small>Please login to your account or <a href="register.php">Create Account</a></small>
                     </div>
                     <div style="font-size:14px; color:red;">
-                    <?php if(!empty($errors)){ echo $errors['noUser'];} ?>
+                    <?php if(!empty($errors)){ echo $errors['noUser']; echo $errors['loginIncorrect'];} ?>
                     </div>
                     <form action="" method="POST">
                         <div class="form-group">
@@ -90,7 +90,7 @@ if($login_check['email'] == $email && password_verify($password, $password_hash)
                         <div class="d-flex form-check">
                             <input type="checkbox" class="filter" id="remember" checked>
                             <label for="remember">Remember me</label>
-                            <a href="reset_password.html" class="ml-auto font-s">Forgot Password?</a>
+                            <a href="reset_password.php" class="ml-auto font-s">Forgot Password?</a>
                         </div>
                         <button type="submit" name="submit" class="btn btn-primary btn-block btn-c mt-4 mb-4">Login</button>
                         
