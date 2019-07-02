@@ -25,8 +25,6 @@ session_start();
           
         }
         
-
-
         .topnav a {
           margin-left: 10px;
           float: left;
@@ -67,12 +65,7 @@ session_start();
     </script>
 
     <style>
-        body{
-            background-image: url("bg.jpg");
-            background-size: 2600px;
-
-        }  
-
+ 
         #title{
             color: aliceblue;
             font-family: sans-serif;
@@ -80,7 +73,6 @@ session_start();
             margin-top: 100px;
             position: relative;
             
-
         }
       #sub{
             color: white;
@@ -108,8 +100,9 @@ session_start();
   align-items: center;
   color: #eee;
   font-family: "Dosis", sans-serif;
+  background-image: url("bg.jpg");
+            background-size: 2600px;
 }
-
 .underlined-a {
   text-decoration: none;
   color: aqua;
@@ -123,28 +116,22 @@ session_start();
   box-shadow: inset 0 -2em 0 white;
   transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
 }
-
-
 </style>
-  <div><h1 id="main_title"><center>Important Notices</center></h1>
+  <div>
+    <h1 id="main_title"><center>Important Notices</center></h1>
  
-  <p id="sub1"><center>Team Admins: Please make sure your team members are using the input form appropriately,</center></p>
-  <p><center>and are filling out team numbers and match numbers! Data Analysis will be useless without those two inputs!</center></p>
-  <h1 id="share"><center>Make sure to share FRCS at competitions, the more users -> The better the data.</center></h1>
+    <p id="sub1"><center>Team Admins: Please make sure your team members are using the input form appropriately,</center></p>
+    <p><center>and are filling out team numbers and match numbers! Data Analysis will be useless without those two inputs!</center></p>
+    <h1 id="share"><center>Make sure to share FRCS at competitions, the more users ➠ The better the data.</center></h1>
   </div>
   
-    
     <style>
-
         #main_title{
             margin-top: 50px;
         }
-
         #share{
          font-size: 30px;
 }
-
-
     </style>
 
 
@@ -152,7 +139,6 @@ session_start();
 
 
 <style>
-
 * {
   box-sizing: inherit;
   transition-property: all;
@@ -175,12 +161,10 @@ session_start();
   .btn-2 {
   letter-spacing: 0;
 }
-
 .btn-2:hover,
 .btn-2:active {
   letter-spacing: 5px;
 }
-
 .btn-2:after,
 .btn-2:before {
   -webkit-backface-visibility: hidden;
@@ -194,16 +178,14 @@ session_start();
   transition: all 280ms ease-in-out;
   width: 0;
 }
-
 .btn-2:hover:after,
 .btn-2:hover:before {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   border-color: #fff;
-  transition: width 350ms ease-in-out;
+  transition: width 280ms ease-in-out;
   width: 5%;
 }
-
 .btn-2:hover:before {
   bottom: auto;
   top: 0;
