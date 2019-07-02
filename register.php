@@ -58,7 +58,7 @@ header('Location: index.php');
                     </div>
                     <form action="register.php" method="POST">
                         <div class="form-group">
-                            <label for="username">Username</label>
+                            <label for="username">Team Number</label>
                             <div class="input-icon">
                                 <i class="mdi mdi-account"></i>
                                 <input type="text" class="form-control" id="username" name="username"
