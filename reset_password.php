@@ -42,7 +42,11 @@
         </div>
         <div class="col-lg-8 auth-right d-lg-flex d-none bg-gradient" id="particles">
             <div class="logo">
+<<<<<<< HEAD
                 <img src="assets/img/Droid-Robot-512.png" width="100" alt="logo">
+=======
+            <img src="Untitled-1-white.png" width="300" alt="logo">
+>>>>>>> 0e8a1af015ec718ac17d813044c06e749cdb75e0
             </div>
             <div class="heading">
                 <h3>Welcome to FRCS</h3>

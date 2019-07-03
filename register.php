@@ -40,7 +40,11 @@ header('Location: index.php');
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<<<<<<< HEAD
     <title>Galaxy - Login and Register Form Templates</title>
+=======
+    <title>Register Account</title>
+>>>>>>> 0e8a1af015ec718ac17d813044c06e749cdb75e0
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/3.3.92/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -56,12 +60,18 @@ header('Location: index.php');
                         <h1>Create Account</h1>
                         <small>Already have an account? <a href="signin.php">Login to Account</a></small>
                     </div>
+<<<<<<< HEAD
                     <div style="font-size:14px; color:red;">
                     <p> <?php if(!empty($errors)){ echo $errors['noCheck'] . $errors['userRegistered'];}?>
                     </div> 
                     <form action="register.php" method="POST">
                         <div class="form-group">
                             <label for="username">Username</label>
+=======
+                    <form action="register.php" method="POST">
+                        <div class="form-group">
+                            <label for="username">Team Number</label>
+>>>>>>> 0e8a1af015ec718ac17d813044c06e749cdb75e0
                             <div class="input-icon">
                                 <i class="mdi mdi-account"></i>
                                 <input type="text" class="form-control" id="username" name="username"
@@ -85,10 +95,13 @@ header('Location: index.php');
                                        placeholder="Enter Your Password" required>
                             </div>
                         </div>
+<<<<<<< HEAD
                         <div class="d-flex form-check">
                             <input type="checkbox" name="checkbox" class="filter" id="remember" checked>
                             <label for="remember">I Accept <a href="#">Terms and Conditions</a></label>
                         </div>
+=======
+>>>>>>> 0e8a1af015ec718ac17d813044c06e749cdb75e0
                         <button type="submit" name="submit" class="btn btn-primary btn-block btn-c mt-4 mb-4">Create an account</button>
                     </form>
                 </div>
@@ -96,10 +109,17 @@ header('Location: index.php');
         </div>
         <div class="col-lg-8 auth-right d-lg-flex d-none bg-gradient" id="particles">
             <div class="logo">
+<<<<<<< HEAD
                 <img src="assets/img/logo.png" width="100" alt="logo">
             </div>
             <div class="heading">
                 <h3>Welcome to Galaxy</h3>
+=======
+            <img src="Untitled-1-white.png" width="300" alt="logo">
+            </div>
+            <div class="heading">
+                <h3>Welcome to FRCS</h3>
+>>>>>>> 0e8a1af015ec718ac17d813044c06e749cdb75e0
             </div>
             <div class="shape"></div>
         </div>
