@@ -50,12 +50,12 @@ session_start();
         <body>
         
         <div class="topnav">
-          <a class="active" href="index.html">Home</a>
-          <a href="scouting.html">Scouting</a>
+          <a class="active" href="index.php">Home</a>
+          <a href="scouting.php">Scouting</a>
           <a href="signin.php">Rankings</a>
-          <a href="data.html">Download Data</a>
-          <a href="matchanalysis.html">Match Analysis<sub>BETA</sub></a>
-          <a href="Feedback.html">Feeback</a>
+          <a href="data.php">Download Data</a>
+          <a href="matchanalysis.php">Match Analysis<sub>BETA</sub></a>
+          <a href="Feedback.php">Feedback</a>
         </div>
         
         <div style="padding-left:16px">
