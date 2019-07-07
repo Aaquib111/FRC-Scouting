@@ -1,22 +1,18 @@
 <?php 
+
+session_start();
+
 include ('config.php'); //connects to database
 
 
 //get the inputs from user - email and password
 $email = "";
 $password = "";
-<<<<<<< HEAD
 $errors = ['noUser' => "", 'loginIncorrect' => ""];
 
 if(isset($_POST['submit'])){
     $email = strval(mysqli_real_escape_string($conn, $_POST['email']));
     $password = mysqli_real_escape_string($conn, $_POST['password']);
-=======
-
-if(isset($_POST['submit'])){
-    $email = strval(mysqli_real_escape_string($conn, $_POST['email']));
-    $password = $_POST['password'];
->>>>>>> 0e8a1af015ec718ac17d813044c06e749cdb75e0
 
 
 //check inputs against server values
@@ -39,19 +35,13 @@ $password_hash = substr($password_hash, 0, 60);
 //confirm/deny entry based on if the inputs were successful (AKA login was succesful so they get redirected)
 
 if($login_check['email'] == $email && password_verify($password, $password_hash)){
-<<<<<<< HEAD
-    $_SESSION['isLoggedIn'] = 'true';
+    $_SESSION['isLoggedIn'] = true;
     $_SESSION['username'] = "$username";
     header('Location: index.php');
 }elseif(empty($login_check)){
     $errors['noUser'] = "No User Found.";
 }else{
     $errors['loginIncorrect'] = "Username/Password is wrong";
-=======
-   header('Location: index.html');
-}else{
-    echo "Username/Password is wrong";
->>>>>>> 0e8a1af015ec718ac17d813044c06e749cdb75e0
 }
 }
 ?>
@@ -81,12 +71,9 @@ if($login_check['email'] == $email && password_verify($password, $password_hash)
                         <h1>Welcome Back</h1>
                         <small>Please login to your account or <a href="register.php">Create Account</a></small>
                     </div>
-<<<<<<< HEAD
                     <div style="font-size:14px; color:red;">
                     <?php if(!empty($errors)){ echo $errors['noUser']; echo $errors['loginIncorrect'];} ?>
                     </div>
-=======
->>>>>>> 0e8a1af015ec718ac17d813044c06e749cdb75e0
                     <form action="" method="POST">
                         <div class="form-group">
                             <label for="email">Email Address</label>
@@ -104,11 +91,6 @@ if($login_check['email'] == $email && password_verify($password, $password_hash)
                             </div>
                         </div>
                         <div class="d-flex form-check">
-<<<<<<< HEAD
-                            <input type="checkbox" class="filter" id="remember" checked>
-                            <label for="remember">Remember me</label>
-=======
->>>>>>> 0e8a1af015ec718ac17d813044c06e749cdb75e0
                             <a href="reset_password.php" class="ml-auto font-s">Forgot Password?</a>
                         </div>
                         <button type="submit" name="submit" class="btn btn-primary btn-block btn-c mt-4 mb-4">Login</button>
@@ -116,11 +98,7 @@ if($login_check['email'] == $email && password_verify($password, $password_hash)
                     </form>
                     
                     <div>
-<<<<<<< HEAD
-                    <a href="Home.html"><button class="btn btn-block btn-dark">Guest</button></a>
-=======
                     <a href="rankings.html"><button class="btn btn-block btn-dark">Guest</button></a>
->>>>>>> 0e8a1af015ec718ac17d813044c06e749cdb75e0
                     </div>
 
                 </div>
@@ -128,17 +106,10 @@ if($login_check['email'] == $email && password_verify($password, $password_hash)
         </div>
         <div class="col-lg-8 auth-right d-lg-flex d-none bg-gradient" id="particles">
             <div class="logo">
-<<<<<<< HEAD
-                <img src="assets/img/Droid-Robot-512.png" width="100" alt="logo">
-            </div>
-            <div class="heading">
-                <h3>FRCS</h3>
-=======
                 <img src="Untitled-1-white.png" width="300" alt="logo">
             </div>
             <div class="heading">
                 <h3>Welcome to FRCS</h3>
->>>>>>> 0e8a1af015ec718ac17d813044c06e749cdb75e0
             </div>
             <div class="shape"></div>
         </div>

@@ -1,5 +1,12 @@
 <?php
 session_start();
+$isLoggedIn = false;
+
+if($_SESSION['isLoggedIn']){
+  $isLoggedIn = true;
+}else{
+  $isLoggedIn = false;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +59,7 @@ session_start();
         <div class="topnav">
           <a class="active" href="index.php">Home</a>
           <a href="scouting.php">Scouting</a>
-          <a href="signin.php">Rankings</a>
+          <a href="<?php if($isLoggedIn){$redirect = "rankings.php";}else{$redirect = "signin.php";} $redirect?>">Rankings</a> <!-- redirect changes based on if the user is logged in or not -->
           <a href="data.php">Download Data</a>
           <a href="matchanalysis.php">Match Analysis<sub>BETA</sub></a>
           <a href="Feedback.php">Feedback</a>
